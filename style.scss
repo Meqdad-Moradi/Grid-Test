@@ -46,10 +46,29 @@ h2 {
 
    .main-article {
       @extend .header;
+      grid-template-areas:
+         "ficon title date name price sicon"
+         "ficon ltext ltext . . sicon";
       background-color: rgb(237, 239, 245);
 
+      .title {
+         grid-area: title;
+      }
+
+      .date {
+         grid-area: date;
+      }
+
+      .name {
+         grid-area: name;
+      }
+
+      .price {
+         grid-area: price;
+      }
+
       .long-text {
-         grid-column: 2 / span 2;
+         grid-area: ltext;
       }
 
       .icon-container {
@@ -59,12 +78,37 @@ h2 {
       }
 
       .first-icon {
-         grid-row: 1 / span 2;
+         grid-area: ficon;
       }
 
       .second-icon {
-         grid-column: 6 / span 1;
-         grid-row: 1 / span 2;
+         grid-area: sicon;
+      }
+   }
+}
+
+@media (max-width: 50em) {
+   .container {
+      .header {
+         display: none;
+      }
+
+      .main-article {
+         display: block;
+         display: grid;
+         grid-template-areas:
+            "ficon title title title price sicon"
+            "ficon ltext ltext ltext ltext sicon"
+            "ficon date name name name sicon";
+         align-items: flex-start;
+
+         .price {
+            text-align: right;
+         }
+
+         .icon-container {
+            padding-top: 0.2em;
+         }
       }
    }
 }
