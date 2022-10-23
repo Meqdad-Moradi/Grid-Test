@@ -1,1 +1,62 @@
-/*# sourceMappingURL=style.css.map */
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::first-letter {
+  text-transform: uppercase;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  color: var(--neutral-800);
+}
+
+h2 {
+  line-height: 0;
+}
+
+.container {
+  width: min(100% - 2em, 1100px);
+  margin-inline: auto;
+}
+.container .header, .container .main-article {
+  display: grid;
+  grid-template-columns: 3em 1fr 10em 10em 10em 3em;
+  padding-block: 1em;
+  background-color: rgb(243, 243, 243);
+  gap: 0.5em;
+}
+.container .main-article {
+  background-color: rgb(237, 239, 245);
+}
+.container .main-article .long-text {
+  grid-column: 2/span 2;
+}
+.container .main-article .icon-container {
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+}
+.container .main-article .first-icon {
+  grid-row: 1/span 2;
+}
+.container .main-article .second-icon {
+  grid-column: 6/span 1;
+  grid-row: 1/span 2;
+}/*# sourceMappingURL=style.css.map */
